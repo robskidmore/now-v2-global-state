@@ -9,6 +9,8 @@ I found two examples of this, one from [@rauchg](https://spectrum.chat/zeit/now/
 
 The zeit docs on [In-memory Cahcing and Global State](https://zeit.co/docs/v2/deployments/concepts/lambdas/#in-memory-caches) weren't particularly helpful either.
 
+So I set out to figure it out for myself.
+
 This repo consists of two functions
 
 ## global/index.js
@@ -39,3 +41,6 @@ module.exports = (req, res) => {
 ```
 This simple endpoint calls the function we exported from `global` and sends a dummy response.
 
+This is what the logs look like when deployed on Now.
+![Now Logs](./requests.png)
+Notice that over the course of 20 min `set global` is only called once. But the value of `global` is logged correctly every time.
