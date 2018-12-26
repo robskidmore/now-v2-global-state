@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "global",
+  "builds": [
+    { "src": "index.js", "use": "@now/node" }
+  ],
+  "routes": [
+    { "src": "index.js", "dest": "/" }
+  ]
+}
